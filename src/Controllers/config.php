@@ -19,7 +19,7 @@ $wwwroot = env('APP_URL');
 
 $dirroot = realpath(__DIR__);
 
-require_once(__DIR__."/../../vendor/autoload.php");
+require_once(__DIR__ . "/../../vendor/autoload.php");
 
 // We store the configuration in a global object
 // Additional documentation on these fields is
@@ -196,9 +196,9 @@ $CFG->OFFLINE = false;
 
 // The vendor include and root - generally leave these alone
 // unless you have a very custom checkout
-$CFG->vendorroot = __DIR__ ."../../vendor/tsugi/lib/util";
-$CFG->vendorinclude = "../../vendor/tsugi/lib/include";
-$CFG->vendorstatic = "../../vendor/tsugi/lib/static";
+$CFG->vendorroot = __DIR__ . "/../../vendor/tsugi/lib/util";
+$CFG->vendorinclude = __DIR__ . "/../../vendor/tsugi/lib/include";
+$CFG->vendorstatic = __DIR__ . "/../../vendor/tsugi/lib/static";
 
 // Leave these here
 require_once $CFG->vendorinclude . "/setup.php";

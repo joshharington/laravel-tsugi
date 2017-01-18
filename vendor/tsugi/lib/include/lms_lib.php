@@ -1,6 +1,6 @@
 <?php
 
-require_once($CFG->dirroot."/../../autoload.php");
+require_once(__DIR__."/../../../autoload.php");
 
 function lmsDie($message=false) {
     global $CFG, $DEBUG_STRING;

@@ -8,11 +8,9 @@
 
 namespace JoshHarington\LaravelTsugi\Controllers;
 
-require_once app_path() . "/../packages/LaravelTsugi/vendor/tsugi/lib/config.php";
+require_once "config.php";
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use Tsugi\Laravel\LTIX;
 
 class TsugiController extends Controller {

@@ -25,7 +25,11 @@ class LaravelTsugiServiceProvider extends ServiceProvider {
     }
 
     public function boot() {
+        $this->migrations();
+    }
 
+    public function migrations() {
+        $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
     }
 
 }

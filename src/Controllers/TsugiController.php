@@ -8,8 +8,6 @@
 
 namespace JoshHarington\LaravelTsugi\Controllers;
 
-require_once "config.php";
-
 use App\Http\Controllers\Controller;
 use Tsugi\Laravel\LTIX;
 
@@ -17,28 +15,19 @@ class TsugiController extends Controller {
 
     public function __construct() {
         $this->middleware(function ($request, $next) {
-
+//            $this->require_config();
             $launch = LTIX::laravelSetup($request, LTIX::ALL);
             if ( $launch->redirect_url ) return redirect($launch->redirect_url);
             if ( $launch->send_403 ) return response($launch->error_message, 403);
             ob_start();
-//            echo("<pre>\n");
-//            echo("\nLaunch:\n");
-//            var_dump($launch);
-            /*
-                echo("\nSession:\n");
-                var_dump($request->session());
-                echo("\nPost:\n");
-                var_dump($_POST);
-                global $CFG;
-                echo("\nCFG:\n");
-                var_dump($CFG);
-            */
-//            echo("</pre>\n");
             ob_get_clean();
 
             return $next($request);
         });
+    }
+
+    function require_config() {
+        require_once "config.php";
     }
 
 }

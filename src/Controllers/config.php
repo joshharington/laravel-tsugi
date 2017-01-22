@@ -136,7 +136,8 @@ $CFG->badge_assert_salt = false; // "mediumlengthhexstring";
 // From LTI 2.0 spec: A globally unique identifier for the service provider.
 // As a best practice, this value should match an Internet domain name
 // assigned by ICANN, but any globally unique identifier is acceptable.
-$CFG->product_instance_guid = parse_url($CFG->wwwroot)['host'];
+$CFG->product_instance_guid = env('APP_HOST', $CFG->wwwroot);
+//$CFG->product_instance_guid = parse_url($CFG->wwwroot)['host'];
 // $CFG->product_instance_guid = 'lti2.example.com';
 
 // From the CASA spec: originator_id a UUID picked by a publisher

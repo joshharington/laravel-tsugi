@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 /**
  * This is a class to enable building Laravel Apps using Tsugi
  */
-class LTIX extends \Tsugi\Core\LTIX {
+class  LTIX extends \Tsugi\Core\LTIX {
 
     public static function laravelSetup(Request $request, $needed=LTIX::ALL) {
          $launch = self::requireDataOverride(LTIX::ALL,
